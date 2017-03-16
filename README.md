@@ -12,5 +12,7 @@
 1. 在派生类中我们可以用基类的方法：basc（）
 2. 用this关键词也可以调用同一个函数的另一个构造函数
 
-3、
-#3、
+3、抽象方法和抽象类
+----------------------
+>https://msdn.microsoft.com/zh-cn/library/ms173150.aspx 抽象类、密封类及类成员（C# 编程指南）
+>https://msdn.microsoft.com/zh-cn/library/sf985hc5.aspx abstract（C# 参考）
