@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\抽象\bin\Debug\抽象.exe.config
+C:\Users\user\Desktop\C#\抽象\bin\Debug\抽象.exe
+C:\Users\user\Desktop\C#\抽象\bin\Debug\抽象.pdb
+C:\Users\user\Desktop\C#\抽象\obj\Debug\抽象.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\抽象\obj\Debug\抽象.exe
+C:\Users\user\Desktop\C#\抽象\obj\Debug\抽象.pdb

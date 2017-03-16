@@ -16,3 +16,12 @@
 ----------------------
 >https://msdn.microsoft.com/zh-cn/library/ms173150.aspx 抽象类、密封类及类成员（C# 编程指南）
 >https://msdn.microsoft.com/zh-cn/library/sf985hc5.aspx abstract（C# 参考）
+
+1. 抽象类的相关内容
+2. 抽象方法的相关内容
+
+4、密闭
+-----------------
+>https://msdn.microsoft.com/zh-cn/library/88c54tsw.aspx sealed（C# 参考）
+
+1. 密闭可以分为对类和对虚方法重写两种情况
