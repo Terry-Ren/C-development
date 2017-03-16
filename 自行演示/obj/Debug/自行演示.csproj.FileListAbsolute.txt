@@ -4,3 +4,9 @@ C:\Users\user\Desktop\C#\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
 C:\Users\user\Desktop\C#\ConsoleApplication1\obj\Debug\自行演示.csprojResolveAssemblyReference.cache
 C:\Users\user\Desktop\C#\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\user\Desktop\C#\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\user\Desktop\C#\自行演示\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\user\Desktop\C#\自行演示\bin\Debug\ConsoleApplication1.exe
+C:\Users\user\Desktop\C#\自行演示\bin\Debug\ConsoleApplication1.pdb
+C:\Users\user\Desktop\C#\自行演示\obj\Debug\自行演示.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\自行演示\obj\Debug\ConsoleApplication1.exe
+C:\Users\user\Desktop\C#\自行演示\obj\Debug\ConsoleApplication1.pdb

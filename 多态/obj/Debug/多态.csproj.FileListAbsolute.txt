@@ -1,0 +1,12 @@
+C:\Users\user\Desktop\C#\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe.config
+C:\Users\user\Desktop\C#\ConsoleApplication2\bin\Debug\ConsoleApplication2.exe
+C:\Users\user\Desktop\C#\ConsoleApplication2\bin\Debug\ConsoleApplication2.pdb
+C:\Users\user\Desktop\C#\ConsoleApplication2\obj\Debug\多态.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\ConsoleApplication2\obj\Debug\ConsoleApplication2.exe
+C:\Users\user\Desktop\C#\ConsoleApplication2\obj\Debug\ConsoleApplication2.pdb
+C:\Users\user\Desktop\C#\多态\bin\Debug\ConsoleApplication2.exe.config
+C:\Users\user\Desktop\C#\多态\bin\Debug\ConsoleApplication2.exe
+C:\Users\user\Desktop\C#\多态\bin\Debug\ConsoleApplication2.pdb
+C:\Users\user\Desktop\C#\多态\obj\Debug\多态.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\多态\obj\Debug\ConsoleApplication2.exe
+C:\Users\user\Desktop\C#\多态\obj\Debug\ConsoleApplication2.pdb

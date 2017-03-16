@@ -4,3 +4,9 @@ C:\Users\user\Desktop\ConsoleApplication1\构造函数1\bin\Debug\构造函数1.
 C:\Users\user\Desktop\ConsoleApplication1\构造函数1\obj\Debug\构造函数1.exe
 C:\Users\user\Desktop\ConsoleApplication1\构造函数1\obj\Debug\构造函数1.pdb
 C:\Users\user\Desktop\ConsoleApplication1\构造函数1\obj\Debug\构造函数1.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\构造函数1\bin\Debug\构造函数1.exe.config
+C:\Users\user\Desktop\C#\构造函数1\obj\Debug\构造函数1.exe
+C:\Users\user\Desktop\C#\构造函数1\obj\Debug\构造函数1.pdb
+C:\Users\user\Desktop\C#\构造函数1\bin\Debug\构造函数1.exe
+C:\Users\user\Desktop\C#\构造函数1\bin\Debug\构造函数1.pdb
+C:\Users\user\Desktop\C#\构造函数1\obj\Debug\构造函数1.csprojResolveAssemblyReference.cache
