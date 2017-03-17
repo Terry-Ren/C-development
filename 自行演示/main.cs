@@ -112,6 +112,7 @@ namespace ConsoleApplication1
             Console.WriteLine(_Name + "汪汪的叫");           //同上！
         }
     }
+    /*-----------继承上面的类，注意这里被密闭的就不可以再次重写了--------------*/
     public class TaiDi : Dog2
     {
         public TaiDi(string name) : base(name)
@@ -131,6 +132,33 @@ namespace ConsoleApplication1
         {
             Console.WriteLine("抽象方法在这里实现了！");
         }
+    }
+    /*---------------声明了一个接口----------------*/
+    interface Icatch
+    {
+        void catchThing();                                    //注意接口中的方法不能有定义
+    }
+    interface Iclimb
+    {
+        void climbtree();
+    }
+
+    /*-------------写一个类用上面的接口--------------*/
+    public class JinMao : Pet1, Icatch,Iclimb
+    {
+        public JinMao(string name) : base(name)     
+        {
+        }
+        void Iclimb.climbtree()                     //这里显式的实现了接口中的方法
+        {
+            Console.WriteLine(_Name + "不会上树");
+        }
+        public void catchThing()                  //这里普通的实现了接口的方法
+        {
+            Console.WriteLine(_Name + "不会抓猫咪");
+        }
+
+        
     }
     class program
     {
@@ -171,6 +199,13 @@ namespace ConsoleApplication1
             TaiDi dog4 = new TaiDi("豆豆");         
             dog4.printfName();
             dog2.Speaking();
+
+            JinMao dog5 = new JinMao("金毛");
+            dog5.printfName();
+            dog5.catchThing();
+            //dog5.climbtree();               这样会出错因为显式后，就不能用类实例实现方法了，应该用接口实例，如下
+            Iclimb cb = (Iclimb)dog5;      //因为接口也是引用类型，但不能直接实例，通过强制转化显式实现的类的实例，来实例一个对象
+            cb.climbtree();                //通过对象来调用被写了的接口方法           
 
             Console.ReadKey();           //Keep the console open in debug mode.
         }

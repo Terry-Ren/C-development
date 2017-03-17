@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "自行演示", "自行演�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "多态", "多态\多态.csproj", "{1F521F5C-9D9E-4075-8BA5-38FA2C34E11F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "接口", "接口\接口.csproj", "{EB0704F6-E079-46E4-8DF4-D90B50728186}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{1F521F5C-9D9E-4075-8BA5-38FA2C34E11F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F521F5C-9D9E-4075-8BA5-38FA2C34E11F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F521F5C-9D9E-4075-8BA5-38FA2C34E11F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
