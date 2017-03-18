@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\静态构造函数\bin\Debug\静态构造函数.exe.config
+C:\Users\user\Desktop\C#\静态构造函数\bin\Debug\静态构造函数.exe
+C:\Users\user\Desktop\C#\静态构造函数\bin\Debug\静态构造函数.pdb
+C:\Users\user\Desktop\C#\静态构造函数\obj\Debug\静态构造函数.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\静态构造函数\obj\Debug\静态构造函数.exe
+C:\Users\user\Desktop\C#\静态构造函数\obj\Debug\静态构造函数.pdb

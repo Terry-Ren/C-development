@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "多态", "多态\多态.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "接口", "接口\接口.csproj", "{EB0704F6-E079-46E4-8DF4-D90B50728186}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "静态构造函数", "静态构造函数\静态构造函数.csproj", "{BF89D8D3-EB26-46D9-9E46-CA4E63DD0138}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB0704F6-E079-46E4-8DF4-D90B50728186}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF89D8D3-EB26-46D9-9E46-CA4E63DD0138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF89D8D3-EB26-46D9-9E46-CA4E63DD0138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF89D8D3-EB26-46D9-9E46-CA4E63DD0138}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF89D8D3-EB26-46D9-9E46-CA4E63DD0138}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

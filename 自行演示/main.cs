@@ -156,10 +156,37 @@ namespace ConsoleApplication1
         public void catchThing()                  //这里普通的实现了接口的方法
         {
             Console.WriteLine(_Name + "不会抓猫咪");
-        }
-
-        
+        }       
     }
+    /*--------------基类，里面用了静态构造函数和静态方法--------------*/
+    public class Pet3
+    {
+        public static int counter;       //静态成员，在开始被初始化，之后多次实例化也不会多次初始化
+        static Pet3()                   //这里静态构造函数，不过多少个实例，都只运行一次
+        {
+            Console.WriteLine("我只运行一次");
+
+        }
+        protected string _Name;                    //利用protect定义_name变量
+        public Pet3(string name)                   //构造基类构造函数
+        {
+            _Name = name;
+            Console.WriteLine("第{0}个小狗被加了进来",++counter);    //这里静态成员不会因为实例的建立而多次初始化，而是值不断增加
+        }
+        public  void printfName()     //其他和上面都一样，这里的_Name变量是基类中构造函数定义的
+        {
+            Console.WriteLine("你好" + _Name);
+        }
+    }
+    /*------------------利用静态类的方法扩展上面的类-----------------------------*/
+    public static class except              //这里建立了一个静态类，注意只能有静态成员
+    {
+        public static void e(this Pet3 d)                //静态方法，第一个参数用 this 类名 对象名 的方式来扩展Pet3类的方法
+        { 
+            Console.WriteLine("这只狗狗逃跑了！");
+        }
+    }
+    /*--------------下面是主函数---------------*/
     class program
     {
         static void Main(string[] args)
@@ -205,7 +232,13 @@ namespace ConsoleApplication1
             dog5.catchThing();
             //dog5.climbtree();               这样会出错因为显式后，就不能用类实例实现方法了，应该用接口实例，如下
             Iclimb cb = (Iclimb)dog5;      //因为接口也是引用类型，但不能直接实例，通过强制转化显式实现的类的实例，来实例一个对象
-            cb.climbtree();                //通过对象来调用被写了的接口方法           
+            cb.climbtree();                //通过对象来调用被写了的接口方法    
+
+            Pet3 dog6 = new Pet3("ren");
+            dog6.printfName();
+            Pet3 dog7 = new Pet3("tian");
+            dog7.printfName();
+            dog7.e();                   //由于上面用了静态类加静态方法通过this Pet3的方式加入了e（）这一个方法，所以这里可以直接用
 
             Console.ReadKey();           //Keep the console open in debug mode.
         }
