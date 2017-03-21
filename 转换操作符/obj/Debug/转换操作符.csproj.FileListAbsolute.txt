@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\转换操作符\bin\Debug\转换操作符.exe.config
+C:\Users\user\Desktop\C#\转换操作符\bin\Debug\转换操作符.exe
+C:\Users\user\Desktop\C#\转换操作符\bin\Debug\转换操作符.pdb
+C:\Users\user\Desktop\C#\转换操作符\obj\Debug\转换操作符.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\转换操作符\obj\Debug\转换操作符.exe
+C:\Users\user\Desktop\C#\转换操作符\obj\Debug\转换操作符.pdb

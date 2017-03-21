@@ -39,6 +39,7 @@
 -------------------------
 >https://msdn.microsoft.com/zh-cn/library/k9x6w0hc.aspx 静态构造函数（C# 编程指南）
 >https://msdn.microsoft.com/zh-cn/library/98f28cdx.aspx static（C# 参考）
+>https://msdn.microsoft.com/zh-cn/library/79b3xss3.aspx 静态类和静态类成员（C# 编程指南）
 
 1. 静态可以分为静态类、静态成员两种（静态成员里面还有一个比较特殊的静态构造函数）
 2. 静态类中只能有静态成员，且无法实例化是密封的

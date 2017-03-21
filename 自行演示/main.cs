@@ -111,7 +111,29 @@ namespace ConsoleApplication1
         {
             Console.WriteLine(_Name + "汪汪的叫");           //同上！
         }
+        public static implicit operator Cat2(Dog2 dog)      //【隐式转换】注意一定要是公开静态，必须要有operator操作符
+        { //公开（public）静态（static）转换方法（implicit/explicit） 目标类型（来源类型 形参）
+            return new Cat2(dog._Name);
+        }
     }
+    public class Cat2 : Pet1
+    {
+        public Cat2(string adc) : base(adc)              //注意这个冒号最好能空一格
+        { }
+        public new void printfName()     //其他和上面都一样，这里的_Name变量是基类中构造函数定义的
+        {
+            Console.WriteLine("你好" + _Name);
+        }
+        public sealed override void Speaking()              //这里密闭了这个方法在继承时候就不能更改了
+        {
+            Console.WriteLine(_Name + "喵喵的叫");           //同上！
+        }
+        public static explicit operator Dog2(Cat2 cat)    //【隐式转换】注意事项同上
+        {
+            return new Dog2(cat._Name);
+        }
+    }
+
     /*-----------继承上面的类，注意这里被密闭的就不可以再次重写了--------------*/
     public class TaiDi : Dog2
     {
@@ -199,7 +221,7 @@ namespace ConsoleApplication1
             dog.running();
 
 
-            Pet dogs = new Dog();                //实例化对象 *采用多态的方法*
+            Pet dogs = new Dog();            //实例化对象 *采用多态的方法*
             dogs.Name = "Dogs";
             dogs.Age = 12;
             dogs.printfName();             //这时候对象装换为Pet对象后，这里new写的就不起作用了（接下一行）
@@ -239,6 +261,14 @@ namespace ConsoleApplication1
             Pet3 dog7 = new Pet3("tian");
             dog7.printfName();
             dog7.e();                   //由于上面用了静态类加静态方法通过this Pet3的方式加入了e（）这一个方法，所以这里可以直接用
+
+            /*Dog2类型定义在102行，Cat2类型在其下面*/
+            Dog2 dog8 =new Dog2("互相转换的小动物");    //先定义一个名字叫“互相转换的小动物”的Dog2类型的动物
+            dog8.Speaking();
+            Cat2 cat2 = dog8;                //将dog8【隐式转换】，转换成（cat2类型）赋值给cat2
+            cat2.Speaking();
+            Dog2 dog9 = (Dog2)cat2;        //在这里将cat2【显式转换】，强制转换成（dog2类型）赋值给dog9     
+            dog9.Speaking();      
 
             Console.ReadKey();           //Keep the console open in debug mode.
         }
