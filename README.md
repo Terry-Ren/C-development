@@ -45,3 +45,12 @@
 2. 静态类中只能有静态成员，且无法实例化是密封的
 3. 静态成员可以在非静态类中，只有一个副本，访问不能通过实例访问（只能用类名.静态成员名）
 4. 静态构造函数自动运行，无访问修饰符，无参数，只运行一次。
+
+7、转换操作符
+----------------------------------
+>https://msdn.microsoft.com/zh-cn/library/85w54y0a.aspx 使用转换运算符（C# 编程指南）
+>https://msdn.microsoft.com/zh-cn/library/z5z9kes2.aspx implicit（C# 参考）
+>https://msdn.microsoft.com/zh-cn/library/xhbhezf4.aspx explicit（C# 参考）
+
+1.转换操作符可以分为implicit（隐式）、explicit（显示）两种方式。
+2.一般而言隐式是扩大转换、显式是缩小转换。
