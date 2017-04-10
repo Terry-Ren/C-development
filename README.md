@@ -52,5 +52,10 @@
 >https://msdn.microsoft.com/zh-cn/library/z5z9kes2.aspx implicit（C# 参考）
 >https://msdn.microsoft.com/zh-cn/library/xhbhezf4.aspx explicit（C# 参考）
 
-1.转换操作符可以分为implicit（隐式）、explicit（显示）两种方式。
-2.一般而言隐式是扩大转换、显式是缩小转换。
+1. 转换操作符可以分为implicit（隐式）、explicit（显示）两种方式。
+2. 一般而言隐式是扩大转换、显式是缩小转换。
+3. 用法为 publice static 转换操作符名称 operater 目标类型 （来源类型 形参）
+4. operatpr关键词可以用于重载操作符
+5. 用法为piblice static 某一类名（代表在这个类中起作用） operator 运算符	（类型名 变量，类型名 变量）（变量个数由运算符维度决定）
+6. 不能重载=、&&、（）、{}、等运算符
+7. 传入参数中必须有一个是包容类型的（也就是说必须是原类型声明的参数），为了方便找到重载版本

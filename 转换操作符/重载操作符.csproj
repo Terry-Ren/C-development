@@ -46,7 +46,8 @@
     <None Include="第二个显式的.cs" />
     <None Include="显式操作explicit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="隐式操作implicit.cs" />
+    <Compile Include="重载运算符.cs" />
+    <None Include="隐式操作implicit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

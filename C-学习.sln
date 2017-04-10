@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "接口", "接口\接口.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "静态构造函数", "静态构造函数\静态构造函数.csproj", "{BF89D8D3-EB26-46D9-9E46-CA4E63DD0138}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "转换操作符", "转换操作符\转换操作符.csproj", "{50D79884-AA1A-4130-B091-01117AF0FB12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "重载操作符", "转换操作符\重载操作符.csproj", "{50D79884-AA1A-4130-B091-01117AF0FB12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -98,10 +98,10 @@ namespace ConsoleApplication1
             Console.WriteLine(Name + "喵喵的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
         }
     }
-    /*--------------这是一个用了基类构造函数的派生类，并密闭了重写方法--------------*/
-    public class Dog2 : Pet1             
+    /*--------------这是一个用了基类构造函数的派生类，并密闭了重写方法、同时采用了显示转换的方法--------------*/
+    public class Dog2 : Pet1
     {
-        public Dog2(string adc) :base(adc)              //注意这个冒号最好能空一格
+        public Dog2(string adc) : base(adc)              //注意这个冒号最好能空一格
         { }
         public new void printfName()     //其他和上面都一样，这里的_Name变量是基类中构造函数定义的
         {
@@ -111,11 +111,22 @@ namespace ConsoleApplication1
         {
             Console.WriteLine(_Name + "汪汪的叫");           //同上！
         }
-        public static implicit operator Cat2(Dog2 dog)      //【隐式转换】注意一定要是公开静态，必须要有operator操作符
+        int d1 = 1;
+        public static implicit operator Cat2(Dog2 dog)      //【显示转换】注意一定要是公开静态，必须要有operator操作符
         { //公开（public）静态（static）转换方法（implicit/explicit） 目标类型（来源类型 形参）
             return new Cat2(dog._Name);
         }
+        public static Dog2 operator ++ (Dog2 dog)        //这里试了一下重载了++操作符
+        {                                                //上面的参数多个时，至少有一个需要包容类型的（即使用该类型的变量），剩下的可以随意
+            dog.d1 += 2;
+            return dog;                                 //返回类型一般为包容类型参数名
+        }
+        public void num()
+        {
+            Console.WriteLine(d1);
+        }
     }
+    /*---------------采用了隐式转换的方法------------*/
     public class Cat2 : Pet1
     {
         public Cat2(string adc) : base(adc)              //注意这个冒号最好能空一格
@@ -268,8 +279,9 @@ namespace ConsoleApplication1
             Cat2 cat2 = dog8;                //将dog8【隐式转换】，转换成（cat2类型）赋值给cat2
             cat2.Speaking();
             Dog2 dog9 = (Dog2)cat2;        //在这里将cat2【显式转换】，强制转换成（dog2类型）赋值给dog9     
-            dog9.Speaking();      
-
+            dog9.Speaking();
+            dog9++;                       //这里使用了一下重载操作符
+            dog9.num();
             Console.ReadKey();           //Keep the console open in debug mode.
         }
     }
