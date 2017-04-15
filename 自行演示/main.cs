@@ -121,9 +121,14 @@ namespace ConsoleApplication1
             dog.d1 += 2;
             return dog;                                 //返回类型一般为包容类型参数名
         }
-        public void num()
+        public void num()                              //这里将opera后的d1输出
         {
             Console.WriteLine(d1);
+        }
+
+        public void happy<T>(T target)                   //这里定义了一个泛型方法，可以将传入的参数转换为指定的类型
+        {
+            Console.WriteLine("狗狗对" + target.ToString() + "很开心！");
         }
     }
     /*---------------采用了隐式转换的方法------------*/
@@ -219,6 +224,56 @@ namespace ConsoleApplication1
             Console.WriteLine("这只狗狗逃跑了！");
         }
     }
+    /*---------------------------泛型类----------------------------*/
+    public class Cage<T>                                   //创建了一个泛型类
+    {
+        readonly int size;
+        T[] array;                                      //创建一个传入类型参数的数组
+        int num;
+        public  Cage(int num)                          //为这个泛型类创建一个构造函数
+        {
+            size = num;
+            num = 0;
+            array = new T[size];                     //初始化一个类型参数的数组
+        }
+        
+        public void Putin(T pet)                   //将满足类型参数的实例传入数组【通过new 类型参数名（）的方法】
+        {
+            if (num < size)
+            {
+                array[num++] = pet;
+            }
+            else
+            {
+                Console.WriteLine("笼子已经装满了！");
+            }
+        }
+        public T Takeout()
+        {
+            if (num != 0)
+            {
+                return array[--num];                 //利用返回值，将数组中的类型返回，可以在实例中，直接返回给一个变量，使得那个变量变成改类型的
+            }
+            else
+            {
+                Console.WriteLine("笼子是空的！");
+                return default(T);              //返回默认
+            }
+        } 
+              /*---在泛型类中写了一个被约束了的泛型方法-----*/
+        public void  Ishappy<T> (T target) where T : Dog2     //约束不仅可以作用于方法，还可以作用于类
+        {
+            Console.WriteLine(target.ToString() + "让动物开心了！");
+            target.printfName();                             //只有添加了约束，才能挑用传入参数中原有的方法（这里就是Dog2中的printname方法）
+        }
+            /*------关于泛型方法的代码写在了Dog2类型中-------*/
+    }
+     public class huamn
+    {
+
+    }
+
+
     /*--------------下面是主函数---------------*/
     class program
     {
@@ -280,9 +335,22 @@ namespace ConsoleApplication1
             cat2.Speaking();
             Dog2 dog9 = (Dog2)cat2;        //在这里将cat2【显式转换】，强制转换成（dog2类型）赋值给dog9     
             dog9.Speaking();
-            dog9++;                       //这里使用了一下重载操作符
+            dog9++;                       //这里使用了一下重载操作符,将opera中的d1从1加到了3
             dog9.num();
+
+            var dogCage = new Cage<Dog2>(1);             //这里创建了一个cage泛型的实例化
+            dogCage.Putin(new Dog2("笼子动物1"));       //将dog2类型的实例传入到dogcage中
+            dogCage.Putin(new Dog2("笼子动物2"));
+            var dog10 = dogCage.Takeout();              //这里将该方法返回值赋值给了dog10
+            dog10.printfName();                        //因为dog10得到了泛型中的返回值，所以其类型也是Dog2的，同样也拥有Dog2类中的方法
+
+            dog10.happy<int>(2323);                    //这里用了一个泛型方法
+            dog10.happy<huamn>(new huamn());          //同样可以这样传进来一个类
+
+            dogCage.Ishappy<Dog2>(new Dog2("泛型的小动物"));   //这里是运用了泛型约束方法的实例化，所以需要满足约束，即必须是Dog2类型的参数传入
+
             Console.ReadKey();           //Keep the console open in debug mode.
+
         }
     }
 }

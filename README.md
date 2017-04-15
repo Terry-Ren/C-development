@@ -14,7 +14,7 @@
 
 3、抽象方法和抽象类
 ----------------------
->https://msdn.microsoft.com/zh-cn/library/ms173150.aspx 抽象类、密封类及类成员（C# 编程指南）
+>https://msdn.microsoft.com/zh-cn/library/ms173150.aspx 抽象类、密封类及类成员（C# 编程指南）     
 >https://msdn.microsoft.com/zh-cn/library/sf985hc5.aspx abstract（C# 参考）
 
 1. 抽象类的相关内容
@@ -28,7 +28,7 @@
 
 5、接口
 ---------------------
->https://msdn.microsoft.com/zh-cn/library/44a9ty12.aspx  如何：显式实现接口成员（C# 编程指南）
+>https://msdn.microsoft.com/zh-cn/library/44a9ty12.aspx  如何：显式实现接口成员（C# 编程指南）      
 >https://msdn.microsoft.com/zh-cn/library/ms173156.aspx#BKMK_RelatedSections 接口（C# 编程指南）
 
 1. 对接口基本定义的理解（interface）,接口类似于抽象，但是可以说比抽象更抽象
@@ -37,8 +37,8 @@
 
 6、静态类和静态成员
 -------------------------
->https://msdn.microsoft.com/zh-cn/library/k9x6w0hc.aspx 静态构造函数（C# 编程指南）
->https://msdn.microsoft.com/zh-cn/library/98f28cdx.aspx static（C# 参考）
+>https://msdn.microsoft.com/zh-cn/library/k9x6w0hc.aspx 静态构造函数（C# 编程指南）          
+>https://msdn.microsoft.com/zh-cn/library/98f28cdx.aspx static（C# 参考）       
 >https://msdn.microsoft.com/zh-cn/library/79b3xss3.aspx 静态类和静态类成员（C# 编程指南）
 
 1. 静态可以分为静态类、静态成员两种（静态成员里面还有一个比较特殊的静态构造函数）
@@ -48,8 +48,8 @@
 
 7、转换操作符
 ----------------------------------
->https://msdn.microsoft.com/zh-cn/library/85w54y0a.aspx 使用转换运算符（C# 编程指南）
->https://msdn.microsoft.com/zh-cn/library/z5z9kes2.aspx implicit（C# 参考）
+>https://msdn.microsoft.com/zh-cn/library/85w54y0a.aspx 使用转换运算符（C# 编程指南）        
+>https://msdn.microsoft.com/zh-cn/library/z5z9kes2.aspx implicit（C# 参考）     
 >https://msdn.microsoft.com/zh-cn/library/xhbhezf4.aspx explicit（C# 参考）
 
 1. 转换操作符可以分为implicit（隐式）、explicit（显示）两种方式。
@@ -58,4 +58,25 @@
 4. operatpr关键词可以用于重载操作符
 5. 用法为piblice static 某一类名（代表在这个类中起作用） operator 运算符	（类型名 变量，类型名 变量）（变量个数由运算符维度决定）
 6. 不能重载=、&&、（）、{}、等运算符
-7. 传入参数中必须有一个是包容类型的（也就是说必须是原类型声明的参数），为了方便找到重载版本
+7. 传入参数中必须有一个是包容类型的（也就是说必须是原类型声明的参数），为了方便找到重载版本。
+
+8、泛型
+-------------------------------------------
+1. 泛型是对早期类型与通用基类型object之间进行强制转换的优化，避免了拆箱与装箱。
+2. 泛型类参数：     
+在泛型类型或方法定义中，类型参数是客户端在实例化泛型类型的变量时指定的特定类型的占位符。  
+3. 泛型类参数命名规则   
+  *务必使用描述性名称命名泛型类型参数，除非单个字母名称完全可以让人了解它表示的含义，而描述性名称不会有更多的意义。    
+ *考虑使用 T 作为具有单个字母类型参数的类型的类型参数名。      
+ *务必将“T”作为描述性类型参数名的前缀。
+ *考虑在参数名中指示对此类型参数的约束。 
+
+9、属性
+---------------------------
+1. 属性是一种成员，它提供灵活的机制来读取、写入或计算私有字段的值。 属性可用作公共数据成员，但它们实际上是称为“访问器”的特殊方法。
+2. 其方法包括get set。 get 属性访问器用于返回属性值，而 set 访问器用于分配新值。
+3. value 关键字用于定义由 set 访问器分配的值。
+4. 可以定义接口属性和只读属性。
+5. 可以自动实现属性，通过     
+ `public string Name { get; set; }`方法可以自动实现。    
+6. 可通过两种方法来实现不可变的属性。 可以将 set 取值函数声明为 private。 属性只能在该类型中设置，但它对于使用者是不可变的。 也可以仅声明 get 取值函数，使属性除了能在该类型的构造函数中设置，在其他任何位置都不可变。

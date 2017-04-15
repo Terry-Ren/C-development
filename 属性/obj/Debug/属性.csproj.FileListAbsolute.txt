@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\属性\bin\Debug\属性.exe.config
+C:\Users\user\Desktop\C#\属性\obj\Debug\属性.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\属性\bin\Debug\属性.exe
+C:\Users\user\Desktop\C#\属性\bin\Debug\属性.pdb
+C:\Users\user\Desktop\C#\属性\obj\Debug\属性.exe
+C:\Users\user\Desktop\C#\属性\obj\Debug\属性.pdb

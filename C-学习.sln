@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "静态构造函数", "静�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "重载操作符", "转换操作符\重载操作符.csproj", "{50D79884-AA1A-4130-B091-01117AF0FB12}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "泛型", "泛型\泛型.csproj", "{EE3FC5D3-DC5B-4552-92A9-198FEF568F8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "属性", "属性\属性.csproj", "{CA79C195-8BAB-4707-9C31-263C91E8888A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{50D79884-AA1A-4130-B091-01117AF0FB12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50D79884-AA1A-4130-B091-01117AF0FB12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50D79884-AA1A-4130-B091-01117AF0FB12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE3FC5D3-DC5B-4552-92A9-198FEF568F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE3FC5D3-DC5B-4552-92A9-198FEF568F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE3FC5D3-DC5B-4552-92A9-198FEF568F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE3FC5D3-DC5B-4552-92A9-198FEF568F8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA79C195-8BAB-4707-9C31-263C91E8888A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA79C195-8BAB-4707-9C31-263C91E8888A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA79C195-8BAB-4707-9C31-263C91E8888A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA79C195-8BAB-4707-9C31-263C91E8888A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

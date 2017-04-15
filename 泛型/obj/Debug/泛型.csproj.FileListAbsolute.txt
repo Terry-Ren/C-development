@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\泛型\bin\Debug\泛型.exe.config
+C:\Users\user\Desktop\C#\泛型\obj\Debug\泛型.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\C#\泛型\bin\Debug\泛型.exe
+C:\Users\user\Desktop\C#\泛型\bin\Debug\泛型.pdb
+C:\Users\user\Desktop\C#\泛型\obj\Debug\泛型.exe
+C:\Users\user\Desktop\C#\泛型\obj\Debug\泛型.pdb
