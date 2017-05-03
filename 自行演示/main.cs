@@ -272,29 +272,57 @@ namespace ConsoleApplication1
     {
 
     }
-
+         /*-------下面是关于泛型接口的方法---------*/
+         public abstract class PetCmd
+    {
+        public abstract string GetCmd();
+    }
+    public class SitCmd : PetCmd
+    {
+        public override string GetCmd()
+        {
+            return "sit";
+        }
+    }
+    public interface IDogLearn<C> where C: PetCmd
+    {
+        void Act(C cmd);
+    }
+    public class Idog : Dog2, IDogLearn<SitCmd>
+    {
+        public Idog(string adc) : base(adc)
+        {
+        }
+        public void Act(SitCmd cmd)   
+        {
+            Console.WriteLine(cmd.GetCmd());
+        }
+    }
 
     /*--------------下面是主函数---------------*/
     class program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("===============调用派生类方法==============");
             Dog dog = new Dog();                 //实例化对象 *调用派生类方法*
             dog.Name = "Dog";
             dog.Age = 12;
             dog.printfName();
             dog.Speaking();
             dog.running();
+            Console.WriteLine();
 
-
+            Console.WriteLine("===============采用多态的方法==============");
             Pet dogs = new Dog();            //实例化对象 *采用多态的方法*
             dogs.Name = "Dogs";
             dogs.Age = 12;
             dogs.printfName();             //这时候对象装换为Pet对象后，这里new写的就不起作用了（接下一行）
             dogs.Speaking();               //输出的就会使基类的hello，而不是您好，这就是多态
             dogs.running();
+            Console.WriteLine();
 
-
+            Console.WriteLine("===============利用数组批量读入==============");
             Pet[] Pets = new Pet[] { new Dog1("优化了的TOM"), new Cat1("优化了的CAT") };//这里利用数组更加简便，在原函数中有该构造函数的存在
             //注意这里数组的声明格式 int[] 名字 =new int[]，比如这里是pet类创建数组，创建的数组叫做Pets，
             //等号后面 Pet[]{ 这里面是声明的个数组类型}
@@ -303,13 +331,18 @@ namespace ConsoleApplication1
                 Pets[i].Speaking();
                 Pets[i].printfName();
             }
+            Console.WriteLine();
 
+            Console.WriteLine("===============派生类用基类构造函数的实例==============");
             Dog2 dog2 = new Dog2("eminem");            //Dgg2类型是一个用了基类Pet1基类中构造函数的实例
             dog2.printfName();
             dog2.Speaking();
+            Console.WriteLine();
 
+            Console.WriteLine("===============抽象函数派生类实现后实例化==============");
             Dog3 dog3 = new Dog3();                   //抽象函数派生类实现后实例化
             dog3.Speaking();
+            Console.WriteLine();
 
             TaiDi dog4 = new TaiDi("豆豆");         
             dog4.printfName();
@@ -328,6 +361,7 @@ namespace ConsoleApplication1
             dog7.printfName();
             dog7.e();                   //由于上面用了静态类加静态方法通过this Pet3的方式加入了e（）这一个方法，所以这里可以直接用
 
+            Console.WriteLine("===============显示隐式转换+重载操作符==============");
             /*Dog2类型定义在102行，Cat2类型在其下面*/
             Dog2 dog8 =new Dog2("互相转换的小动物");    //先定义一个名字叫“互相转换的小动物”的Dog2类型的动物
             dog8.Speaking();
@@ -337,6 +371,7 @@ namespace ConsoleApplication1
             dog9.Speaking();
             dog9++;                       //这里使用了一下重载操作符,将opera中的d1从1加到了3
             dog9.num();
+            Console.WriteLine();
 
             var dogCage = new Cage<Dog2>(1);             //这里创建了一个cage泛型的实例化
             dogCage.Putin(new Dog2("笼子动物1"));       //将dog2类型的实例传入到dogcage中
@@ -348,6 +383,60 @@ namespace ConsoleApplication1
             dog10.happy<huamn>(new huamn());          //同样可以这样传进来一个类
 
             dogCage.Ishappy<Dog2>(new Dog2("泛型的小动物"));   //这里是运用了泛型约束方法的实例化，所以需要满足约束，即必须是Dog2类型的参数传入
+
+            Idog dog11 = new Idog("泛型接口狗狗");
+            dog11.printfName();
+            dog11.Act(new SitCmd());
+            Console.WriteLine("===============下面是相关集合==============");
+            Console.WriteLine();
+            Console.WriteLine("===============【1】list<T>类==============");
+            List<Dog1> lists = new List<Dog1>();          //声明一个list的泛型类
+            lists.Add(new Dog1("list1"));                //这里用了Add（）方法
+            lists.Add(new Dog1("list2"));
+            for(int i=0;i<lists.Count;i++)               //这里用了count属性
+            {
+                lists[i].printfName();
+            }
+            lists.Remove(lists[1]);
+            Console.WriteLine("-------------下面是Remove掉一个后的--------------");
+            for (int i = 0; i < lists.Count; i++)
+            {
+                lists[i].printfName();
+            }
+            Console.WriteLine();
+            Console.WriteLine("===============【2】Stack<T>类==============");
+            Stack<Dog1> stacks = new Stack<Dog1>();
+            stacks.Push(new Dog1("stack1"));
+            stacks.Push(new Dog1("stack2"));
+            Console.WriteLine("-------------peak查看栈顶但是不弹出--------------");
+            var dog12 = stacks.Peek();
+            dog12.printfName();
+            Console.WriteLine("-------------下面将栈顶的弹出--------------");
+            var dog13 = stacks.Pop();
+            dog13.printfName();
+            Console.WriteLine("-------------peak再次查看栈顶但是不弹出--------------");
+            dog12 = stacks.Peek();
+            dog12.printfName();
+            Console.WriteLine("===============【3】Queue<T>类==============");
+            Queue<Dog1> queues = new Queue<Dog1>();
+            queues.Enqueue(new Dog1("queue1"));
+            queues.Enqueue(new Dog1("queue2"));
+            foreach (Dog1 item in queues)          //通过foreach遍历集合中的每一项
+            {
+                item.printfName();
+            }
+            Console.WriteLine("-------------插入两个弹出从先插入的弹出--------------");
+            var dog14 = queues.Dequeue();
+            dog14.printfName();
+            Console.WriteLine("===============【3】dictionary<T>类==============");
+            Dictionary<string, Dog1> dics = new Dictionary<string, Dog1>();
+            dics.Add("labuladuo",new Dog1("doc1"));
+            dics.Add("guibin", new Dog1("doc2"));
+            foreach (Dog1 item in dics.Values)   //从valus中遍历各项
+            {
+                item.printfName();
+            }
+
 
             Console.ReadKey();           //Keep the console open in debug mode.
 

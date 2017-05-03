@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\集合\bin\Debug\集合.exe.config
+C:\Users\user\Desktop\C#\集合\bin\Debug\集合.exe
+C:\Users\user\Desktop\C#\集合\bin\Debug\集合.pdb
+C:\Users\user\Desktop\C#\集合\obj\Debug\集合.exe
+C:\Users\user\Desktop\C#\集合\obj\Debug\集合.pdb
+C:\Users\user\Desktop\C#\集合\obj\Debug\集合.csprojResolveAssemblyReference.cache

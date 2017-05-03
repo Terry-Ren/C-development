@@ -8,7 +8,7 @@ namespace 泛型
 {
     class 泛型接口
     {
-        //Type parameter T in angle brackets.
+        //Type parameter T in angle brackets（尖括号）.
         public class GenericList<T> : System.Collections.Generic.IEnumerable<T>
         {
             protected Node head;
@@ -74,7 +74,7 @@ namespace 泛型
 
         public class SortedList<T> : GenericList<T> where T : System.IComparable<T>
         {
-            // A simple, unoptimized sort algorithm that 
+            // A simple, unoptimized（未优化） sort algorithm（算法） that 
             // orders list elements from lowest to highest:
 
             public void BubbleSort()
@@ -125,8 +125,8 @@ namespace 泛型
         // A simple class that implements IComparable<T> using itself as the 
         // type argument. This is a common design pattern in objects that 
         // are stored in generic lists.
-        public class Person : System.IComparable<Person>
-        {
+        public class Person : System.IComparable<Person>    //这里的IComparable接口是具有逆变性的   注意只能出现在输入位置
+        {                                                  //也就是说用in 在参数前，泛型中的方法能获取对象参数时候，他们也能获取字符串参数。
             string name;
             int age;
 
@@ -137,7 +137,7 @@ namespace 泛型
             }
 
             // This will cause list elements to be sorted on age values.
-            public int CompareTo(Person p)
+            public int CompareTo(Person p)         //实现接口里的方法
             {
                 return age - p.age;
             }

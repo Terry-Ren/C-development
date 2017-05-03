@@ -42,7 +42,7 @@ namespace 属性
             }
 
             // Public factory method.   
-            public static Contact2 CreateContact(string name, string address)
+            public static Contact2 CreateContact(string name, string address)   //这是一个静态方法
             {
                 return new Contact2(name, address);
             }
