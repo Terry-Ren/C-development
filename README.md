@@ -87,10 +87,23 @@
 
 10、集合
 --------------------------------
->http://blog.csdn.net/alisa525/article/details/38656505  哈希表字典
+>http://blog.csdn.net/alisa525/article/details/38656505  哈希表字典      
 >https://msdn.microsoft.com/zh-cn/library/6sh2ey19(v=vs.110).aspx   各种集合类的方法
 
 1. 集合相对于数组来说会更加方便在有些情况下
 2. 集合包括List、ArrayList、Stack、Queue、HashTable、Dictionary等等。
 3. 大部分集合都是可以写成泛型集合，通过指定其中元素的类型，避免了装箱拆箱的问题
 4. 数组可以使用foreach方法遍历，同样泛型集合在指定了类型后也是可以用foreach遍历的。
+
+11、事件和委托
+-------------------------
+>https://msdn.microsoft.com/zh-cn/library/ms173172.aspx 使用委托（C# 编程指南）    
+
+1. 委托是安全封装方法的类型。委托同样需要实例化后才能使用。
+2. 委托的声明方法如下：    
+   `publice delegate void myDelegate();`    
+   修饰符在这里可以省略，同时在委托名中可以传入参数列表（注意参数个数类型应有赋值引用的方法对应。）
+3. 委托的引用方法：     
+   `myDelegate=p.method;`  
+   需要注意的是赋方法引用时候没有圆括号！！
+4. 委托调用时候有圆括号，里面可以传入参数。  eg：委托名();

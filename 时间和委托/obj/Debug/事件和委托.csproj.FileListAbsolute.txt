@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\C#\时间和委托\bin\Debug\时间和委托.exe.config
+C:\Users\user\Desktop\C#\时间和委托\bin\Debug\时间和委托.exe
+C:\Users\user\Desktop\C#\时间和委托\bin\Debug\时间和委托.pdb
+C:\Users\user\Desktop\C#\时间和委托\obj\Debug\时间和委托.exe
+C:\Users\user\Desktop\C#\时间和委托\obj\Debug\时间和委托.pdb
+C:\Users\user\Desktop\C#\时间和委托\obj\Debug\事件和委托.csprojResolveAssemblyReference.cache

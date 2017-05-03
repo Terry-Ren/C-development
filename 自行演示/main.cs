@@ -9,19 +9,19 @@ namespace ConsoleApplication1
 
     public class Pet
     {
-        public string Name;
+        public string _name;
         public int Age;
         public void printfName()
         {
-            Console.WriteLine("hello, " + Name);
+            Console.WriteLine("hello, " + _name);
         }
         public virtual void Speaking()                    //构建一个虚方法
         {
-            Console.WriteLine(Name + "动物会不同的叫。");
+            Console.WriteLine(_name + "动物会不同的叫。");
         }
         public void running()
         {
-            Console.WriteLine(Name + "跑来跑去");
+            Console.WriteLine(_name + "跑来跑去");
         }              
     }
 
@@ -58,11 +58,11 @@ namespace ConsoleApplication1
     {
          public new void printfName()     //*隐藏类型* 通过new关键词进行屏蔽，new不是必须但应该加上。屏蔽注意类型和函数签名都应该相同
         {
-            Console.WriteLine("你好" + Name );
+            Console.WriteLine("你好" + _name );
         }
         public override void Speaking()
         {
-            Console.WriteLine(Name + "汪汪的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
+            Console.WriteLine(_name + "汪汪的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
         }
     }
 
@@ -71,15 +71,15 @@ namespace ConsoleApplication1
     {
         public Dog1(string name)          //构造函数，是其更加简便
         {
-            Name = name;
+            _name = name;
         }
         public new void printfName()     //*隐藏类型* 通过new关键词进行屏蔽，new不是必须但应该加上。屏蔽注意类型和函数签名都应该相同
         {
-            Console.WriteLine("你好" + Name);
+            Console.WriteLine("你好" + _name);
         }
         public override void Speaking()
         {
-            Console.WriteLine(Name + "汪汪的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
+            Console.WriteLine(_name + "汪汪的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
         }
     }
     /*-------------- 与Dog1 : Pet 派生类进行对比--------------*/
@@ -87,15 +87,15 @@ namespace ConsoleApplication1
     {
         public Cat1(string name)          //构造函数，是其更加简便
         {
-            Name = name;
+            _name = name;
         }
         public new void printfName()     //*隐藏类型* 通过new关键词进行屏蔽，new不是必须但应该加上。屏蔽注意类型和函数签名都应该相同
         {
-            Console.WriteLine("你好" + Name);
+            Console.WriteLine("你好" + _name);
         }
         public override void Speaking()
         {
-            Console.WriteLine(Name + "喵喵的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
+            Console.WriteLine(_name + "喵喵的叫");           //*重写* 重写该方法，与new不同，new是隐藏，nwe下基类不会改变
         }
     }
     /*--------------这是一个用了基类构造函数的派生类，并密闭了重写方法、同时采用了显示转换的方法--------------*/
@@ -112,7 +112,7 @@ namespace ConsoleApplication1
             Console.WriteLine(_Name + "汪汪的叫");           //同上！
         }
         int d1 = 1;
-        public static implicit operator Cat2(Dog2 dog)      //【显示转换】注意一定要是公开静态，必须要有operator操作符
+        public static implicit operator Cat2(Dog2 dog)      //【隐示转换】注意一定要是公开静态，必须要有operator操作符
         { //公开（public）静态（static）转换方法（implicit/explicit） 目标类型（来源类型 形参）
             return new Cat2(dog._Name);
         }
@@ -144,7 +144,7 @@ namespace ConsoleApplication1
         {
             Console.WriteLine(_Name + "喵喵的叫");           //同上！
         }
-        public static explicit operator Dog2(Cat2 cat)    //【隐式转换】注意事项同上
+        public static explicit operator Dog2(Cat2 cat)    //【显式转换】注意事项同上
         {
             return new Dog2(cat._Name);
         }
@@ -299,14 +299,30 @@ namespace ConsoleApplication1
         }
     }
 
+    //这个类主要是为了委托用一下
+    public class Dog4 : Dog1
+    {
+        public Dog4(string name) : base(name)
+        {
+        }
+
+        public void wagTail()
+        {
+            Console.WriteLine(_name + "摇尾巴");
+        }
+        
+    }
+
     /*--------------下面是主函数---------------*/
     class program
     {
+        public delegate void myDelegate();
+
         static void Main(string[] args)
         {
             Console.WriteLine("===============调用派生类方法==============");
             Dog dog = new Dog();                 //实例化对象 *调用派生类方法*
-            dog.Name = "Dog";
+            dog._name = "Dog";
             dog.Age = 12;
             dog.printfName();
             dog.Speaking();
@@ -315,7 +331,7 @@ namespace ConsoleApplication1
 
             Console.WriteLine("===============采用多态的方法==============");
             Pet dogs = new Dog();            //实例化对象 *采用多态的方法*
-            dogs.Name = "Dogs";
+            dogs._name = "Dogs";
             dogs.Age = 12;
             dogs.printfName();             //这时候对象装换为Pet对象后，这里new写的就不起作用了（接下一行）
             dogs.Speaking();               //输出的就会使基类的hello，而不是您好，这就是多态
@@ -436,6 +452,16 @@ namespace ConsoleApplication1
             {
                 item.printfName();
             }
+            Console.WriteLine("===============下面是委托的使用==============");
+            //委托声明不能放在mian里面，这里放在了mian的上面(也可以放在某一个类里面)
+            Dog1 dog15 = new Dog1("委托的狗狗");
+            myDelegate mdl = dog15.Speaking;      //注意这里只是赋值方法的引用，没有括号的！
+            //myDelegate也是一种类型，所以要先实例化再使用
+            mdl();
+            Console.WriteLine();
+            Cat2 cat3 = new Cat2("委托的猫猫");
+            mdl += cat3.Speaking;               //这里通过+=运算符将一个实例中再加入一个方法
+            mdl();                              //这时候一次调用就可以调用两个方法
 
 
             Console.ReadKey();           //Keep the console open in debug mode.
