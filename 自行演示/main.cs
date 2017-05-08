@@ -317,6 +317,7 @@ namespace ConsoleApplication1
     class program
     {
         public delegate void myDelegate();
+        public delegate void myDelegate2(string _name);
 
         static void Main(string[] args)
         {
@@ -462,6 +463,10 @@ namespace ConsoleApplication1
             Cat2 cat3 = new Cat2("委托的猫猫");
             mdl += cat3.Speaking;               //这里通过+=运算符将一个实例中再加入一个方法
             mdl();                              //这时候一次调用就可以调用两个方法
+            mdl += () => { Console.WriteLine("Lambda表达式在这里实现"); };   //在delegate实例的对象中加入一个Lambda表达式
+            mdl();
+            myDelegate2 mdl2 = (name) => { Console.WriteLine(name + "传入参数的狗狗在这里实现"); }; //mdl2是一个可以传入参数的委托类型
+            mdl2("Lambda");              //在上方用lambda表达式的方法对他进行了扩展
 
 
             Console.ReadKey();           //Keep the console open in debug mode.
